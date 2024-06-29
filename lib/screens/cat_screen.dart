@@ -11,34 +11,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 
 class CategoriesScreen extends StatelessWidget {
-  // late List<Category> categories;
-  // final _categoryService = CategoryService();
-  // bool _isLoading = false;
-
-
-
-  // void _fetchCategories() async {
-  //   // setState(() {
-  //   //   _isLoading = true;
-  //   // });
-  //
-  //   try {
-  //     categories = await _categoryService.getCategories();
-  //     // setState(() {
-  //     //   _isLoading = false;
-  //     // });
-  //   } catch (e) {
-  //     // setState(() {
-  //     //   _isLoading = false;
-  //     // });
-  //     print('Error fetching categories: $e');
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return
-
       Scaffold(
         appBar: AppBar(
           centerTitle: true,

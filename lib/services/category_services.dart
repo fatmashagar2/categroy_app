@@ -1,15 +1,13 @@
 
 import 'dart:convert';
 
-
-
-import 'package:category_app/model/category_model.dart';
+import 'package:http/http.dart' as http;
 import 'package:category_app/repostory/posts/posts_api.dart';
-import 'package:http/http.dart'as http;
 
+import '../model/category_model.dart';
 
 class CategoryService {
   getCategories() async {
-    PostApi().getallcat();
+   return await PostApi().getallcat();
   }
 }
