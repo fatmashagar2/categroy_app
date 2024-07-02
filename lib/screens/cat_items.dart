@@ -1,5 +1,5 @@
 import 'package:category_app/model/category_model.dart';
-import 'package:category_app/screens/meals.dart';
+import 'package:category_app/screens/meals_services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +24,8 @@ class category_items extends StatelessWidget {
         final category = categories[index];
         return Container(
           child: GestureDetector(
-            onTap: ()=>Navigator.pushNamed(context,'/meals',arguments: category),
+            onTap: (){Navigator.pushNamed(context,'/meals',arguments: category.name);
+              print(category.name);},
             child: Card(
               elevation: 4.0,
               child: Column(
@@ -74,4 +75,5 @@ class category_items extends StatelessWidget {
       },
     );
   }
+
 }

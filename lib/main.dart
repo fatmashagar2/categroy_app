@@ -1,32 +1,21 @@
-import 'package:category_app/blocc/category_bloc.dart';
-import 'package:category_app/model/category_model.dart';
-import 'package:category_app/screens/cat_items.dart';
-import 'package:category_app/screens/cat_screen.dart';
-import 'package:category_app/screens/meals.dart';
-import 'package:category_app/services/category_services.dart';
+import 'package:category_app/constant.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'app_router.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final Category categories;
-  final int ca;
-    return BlocProvider(
-      create: (context) => CategoryBloc(catss: CategoryService())..add(GetCategory()),
-      child: MaterialApp(
-        initialRoute: '/',
-        routes: {
-          '/': (context) => CategoriesScreen(),
-          '/meals': (context) =>  Meals(ca:ca,),
-        },
-        debugShowCheckedModeBanner: false,
-      ),
+    return MaterialApp(
+      initialRoute: AppRoutes.categories,
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: AppRouter().generateRouter,
     );
   }
 }
